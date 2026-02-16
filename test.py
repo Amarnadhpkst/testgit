@@ -31,4 +31,28 @@ def main():
         if choice not in [1, 2, 3]:
             print("❌ Invalid choice! Please enter 1, 2, or 3.")
             return
+    try:
+        choice = int(input("Enter your choice (1/2/3/4): "))
+
+        # Validate enum choice
+        if choice not in [1, 2, 3, 4]:
+            print("❌ Invalid choice! Please enter 1, 2, 3, or 4.")
+            return
         
+        # Inputs for numbers
+        a = float(input("Enter first number: "))
+        b = float(input("Enter second number: "))
+        
+        # Perform calculation
+        operation = Operation(choice)
+        result = calculate(operation, a, b)
+
+        print(f"Result: {result}")
+
+    except ValueError:
+        print("❌ Invalid input! Please enter only numbers.")
+
+# Run program
+if __name__ == "__main__":
+    main()
+     
